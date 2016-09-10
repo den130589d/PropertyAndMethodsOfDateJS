@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p></p>
+	<button>Click</button>
+
+	<script>
+		var p = document.getElementsByTagName('p')[0];
+		var but = document.getElementsByTagName('button')[0]; 
+		but.addEventListener('click', fun);
+		function fun() {
+			var loc = location.href;
+			var namePage = loc.substr(loc.lastIndexOf('/')+1);
+			var namePage1 = namePage.slice(0 , (namePage.indexOf('.')));
+			p.innerHTML = namePage1;
+
+		}
+	</script>
+</body>
+</html>

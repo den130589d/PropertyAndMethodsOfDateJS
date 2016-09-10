@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p></p>
+	<button>вывести массив на экран</button> <br>
+	<input type="text"> <br>
+	<button>добавить цвет в массив</button> <br>
+	<input type="text"> <br>
+	<button>удалить цвет из массива</button>
+
+	<script>
+		var arr = ['red','green','blue'];
+		
+		document.getElementsByTagName('button')[0].addEventListener('click', show);
+		document.getElementsByTagName('button')[1].addEventListener('click', add);
+		document.getElementsByTagName('button')[2].addEventListener('click', d);
+		function show() {
+			var str = arr.join(', ')
+			document.getElementsByTagName('p')[0].innerHTML = str;
+		}
+		function add() {
+			var a = document.getElementsByTagName('input')[0].value;
+			arr.push(a);
+			show();
+		}
+		function d() {
+			var del = document.getElementsByTagName('input')[1].value;
+				arr.splice(del,1);
+				show();
+				}
+	</script>
+</body>
+</html>
